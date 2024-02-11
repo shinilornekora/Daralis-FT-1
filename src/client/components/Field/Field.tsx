@@ -39,7 +39,6 @@ export const Field = memo(() => {
         <PlayerPositionContext.Provider value={ playerPos }>
             <div className="field">
                 <Player { ...vector } 
-                    setDirection={ setDirection } 
                     currentCords={ currentCords }
                     setPlayerPos={ setPlayerPos }
                     playerPos={ playerPos }

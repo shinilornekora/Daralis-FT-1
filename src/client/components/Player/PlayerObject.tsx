@@ -8,7 +8,6 @@ type Props = {
     x: number;
     y: number;
     color: string;
-    setDirection: (state: CordsPosition) => void;
     currentCords: (cords: CordsPosition) => void;
     setPlayerPos: (playerPos: PlayerPosition) => void;
     cords: CordsPosition;
@@ -20,7 +19,6 @@ export const Player: React.FC<Props> = (
         x, 
         y, 
         color, 
-        setDirection, 
         currentCords, 
         cords,
         playerPos,
@@ -28,6 +26,8 @@ export const Player: React.FC<Props> = (
     }) => {
     const props = useSpring({ left: x, top: y });
     const requestRef = useRef<number>();
+
+    console.log(playerPos);
 
     const trackPosition = useMemo(() => () => {
         const playerCords = document.querySelector('.player div')!.getBoundingClientRect();
@@ -42,7 +42,6 @@ export const Player: React.FC<Props> = (
             setPlayerPos,
             cords,
             playerPos,
-
         })
         requestRef.current = requestAnimationFrame(trackPosition);
     }, [cords, currentCords, playerPos, setPlayerPos]);
