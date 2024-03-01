@@ -22,3 +22,5 @@ export type PlayerClickProps = {
 }
 
 export const PlayerPositionContext = createContext('center');
+
+export const GameStateContext = createContext(false);

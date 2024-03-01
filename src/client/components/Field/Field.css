@@ -48,3 +48,30 @@
 .active {
     background: red;
 }
+
+.lineContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: 0;
+}
+
+.currentCommand {
+    height: 50px;
+    width: 50px;
+    border: 2px solid rgba(0,0,0,0.6)
+}
+
+.commands {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    gap: 50px;
+    font-size: 30px;
+    align-items: center;
+    transform: translate(57%, -2%);
+}

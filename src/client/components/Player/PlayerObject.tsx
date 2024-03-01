@@ -24,10 +24,16 @@ export const Player: React.FC<Props> = (
         playerPos,
         setPlayerPos
     }) => {
-    const props = useSpring({ left: x, top: y });
-    const requestRef = useRef<number>();
 
-    console.log(playerPos);
+    const requestRef = useRef<number>();
+    const props = useSpring({ 
+        left: x, 
+        top: y,
+        config: { 
+            tension: 270, 
+            friction: 30, 
+        },
+    });
 
     const trackPosition = useMemo(() => () => {
         const playerCords = document.querySelector('.player div')!.getBoundingClientRect();
